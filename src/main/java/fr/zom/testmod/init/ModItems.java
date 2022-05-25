@@ -1,6 +1,9 @@
-package fr.zom.testmod;
+package fr.zom.testmod.init;
 
+import fr.zom.testmod.TestMod;
+import fr.zom.testmod.config.TestModConfig;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -11,4 +14,5 @@ public class ModItems {
 
     public static final RegistryObject<Item> BLACK_EMERALD = ITEMS.register("black_emerald", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_EMERALD = ITEMS.register("red_emerald", () -> new Item(new Item.Properties()));
+
 }
