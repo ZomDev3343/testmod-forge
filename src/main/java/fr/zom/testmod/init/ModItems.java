@@ -1,6 +1,9 @@
 package fr.zom.testmod.init;
 
 import fr.zom.testmod.TestMod;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,7 +16,19 @@ public class ModItems {
     public static final RegistryObject<Item> BLACK_EMERALD = ITEMS.register("black_emerald", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_EMERALD = ITEMS.register("red_emerald", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> BLACK_SWORD = ITEMS.register("black_sword", () -> new SwordItem(ModTiers.BLACK_TIER, 3, -2.4f, new Item.Properties().tab(TestMod.MOD_TAB)));
+    public static final RegistryObject<Item> BLACK_SWORD = ITEMS.register("black_sword", () -> new SwordItem(ModTiers.BLACK_TIER, 3, -2.4f, new Item.Properties().tab(TestMod.MOD_TAB))
+    {
+        @Override
+        public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+
+            if(!pAttacker.getLevel().isClientSide())
+            {
+                pTarget.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 0));
+            }
+
+            return true;
+        }
+    });
     public static final RegistryObject<Item> BLACK_PICKAXE = ITEMS.register("black_pickaxe", () -> new PickaxeItem(ModTiers.BLACK_TIER, 2, -2.4f, new Item.Properties().tab(TestMod.MOD_TAB)));
     public static final RegistryObject<Item> BLACK_SHOVEL = ITEMS.register("black_shovel", () -> new ShovelItem(ModTiers.BLACK_TIER, 2, -2.4f, new Item.Properties().tab(TestMod.MOD_TAB)));
     public static final RegistryObject<Item> BLACK_AXE = ITEMS.register("black_axe", () -> new AxeItem(ModTiers.BLACK_TIER, 4, -2.8f, new Item.Properties().tab(TestMod.MOD_TAB)));
