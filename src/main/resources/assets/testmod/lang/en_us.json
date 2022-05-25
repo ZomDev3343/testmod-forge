@@ -1,6 +1,13 @@
 {
   "item.testmod.black_emerald": "Black Emerald",
   "item.testmod.red_emerald": "Red Emerald",
+
+  "item.testmod.black_sword": "Black Sword",
+  "item.testmod.black_pickaxe": "Black Pickaxe",
+  "item.testmod.black_shovel": "Black Shovel",
+  "item.testmod.black_axe": "Black Axe",
+  "item.testmod.black_hoe": "Black Hoe",
+
   "itemGroup.testmod.mod_tab": "TestMod Tab"
 
 }

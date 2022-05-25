@@ -1,6 +1,13 @@
 {
   "item.testmod.black_emerald": "Emeraude Noire",
   "item.testmod.red_emerald": "Emeraude Rouge",
+
+  "item.testmod.black_sword": "Epée Noire",
+  "item.testmod.black_pickaxe": "Pioche Noire",
+  "item.testmod.black_shovel": "Pelle Noire",
+  "item.testmod.black_axe": "Hache Noire",
+  "item.testmod.black_hoe": "Houe Noire",
+
   "itemGroup.testmod.mod_tab": "TestMod"
 
 }
