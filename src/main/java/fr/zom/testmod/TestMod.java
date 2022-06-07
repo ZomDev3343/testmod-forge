@@ -1,6 +1,7 @@
 package fr.zom.testmod;
 
 import fr.zom.testmod.config.TestModConfig;
+import fr.zom.testmod.init.ModBlocks;
 import fr.zom.testmod.init.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -13,8 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
 
 @Mod(TestMod.MODID)
 public class TestMod {
@@ -60,7 +59,7 @@ public class TestMod {
 
     private void addRegistries(IEventBus bus) {
         ModItems.ITEMS.register(bus);
-
+        ModBlocks.BLOCKS.register(bus);
     }
 
     private void registerConfigs(ModLoadingContext ctx) {
