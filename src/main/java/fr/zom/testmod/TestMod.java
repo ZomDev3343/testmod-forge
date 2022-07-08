@@ -3,7 +3,6 @@ package fr.zom.testmod;
 import fr.zom.testmod.config.TestModConfig;
 import fr.zom.testmod.init.ModBlocks;
 import fr.zom.testmod.init.ModFeatures;
-import fr.zom.testmod.init.ModFeaturesOld;
 import fr.zom.testmod.init.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
