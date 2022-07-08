@@ -17,6 +17,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TestMod.MODID);
 
     public static final RegistryObject<Block> RED_EMERALD_BLOCK = createBlock("red_emerald_block", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> RED_EMERALD_ORE = createBlock("red_emerald_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE)));
 
     private static RegistryObject<Block> createBlock(String name, Supplier<? extends Block> block)
     {

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "testmod:red_emerald_block"
+    "testmod:red_emerald_block",
+    "testmod:red_emerald_ore"
   ]
 }

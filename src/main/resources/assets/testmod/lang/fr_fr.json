@@ -8,6 +8,9 @@
   "item.testmod.black_axe": "Hache Noire",
   "item.testmod.black_hoe": "Houe Noire",
 
+  "block.testmod.red_emerald_block": "Bloc d'Emeraude Rouge",
+  "block.testmod.red_emerald_ore": "Minerai d'Emeraude Rouge",
+
   "itemGroup.testmod.mod_tab": "TestMod"
 
 }

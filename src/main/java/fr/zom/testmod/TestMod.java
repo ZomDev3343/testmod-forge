@@ -2,6 +2,8 @@ package fr.zom.testmod;
 
 import fr.zom.testmod.config.TestModConfig;
 import fr.zom.testmod.init.ModBlocks;
+import fr.zom.testmod.init.ModFeatures;
+import fr.zom.testmod.init.ModFeaturesOld;
 import fr.zom.testmod.init.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -12,6 +14,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,7 +45,7 @@ public class TestMod {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
 
-
+        modEventBus.addListener(this::onGatherData);
 
     }
 
@@ -51,6 +54,8 @@ public class TestMod {
         {
             LOGGER.info("Red emerald disabled !");
         }
+
+
     }
 
     public void clientSetup(FMLClientSetupEvent e) {
@@ -60,6 +65,8 @@ public class TestMod {
     private void addRegistries(IEventBus bus) {
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModFeatures.FEATURES.register(bus);
+        ModFeatures.PLACED_FEATURES.register(bus);
     }
 
     private void registerConfigs(ModLoadingContext ctx) {
@@ -68,5 +75,12 @@ public class TestMod {
         ctx.registerConfig(ModConfig.Type.CLIENT, TestModConfig.clientSpec, configFolder + "client-config.toml");
         ctx.registerConfig(ModConfig.Type.SERVER, TestModConfig.serverSpec, configFolder + "server-config.toml");
         ctx.registerConfig(ModConfig.Type.COMMON, TestModConfig.commonSpec, configFolder + "common-config.toml");
+    }
+
+    // Data Generation
+
+    private void onGatherData(final GatherDataEvent e)
+    {
+
     }
 }
