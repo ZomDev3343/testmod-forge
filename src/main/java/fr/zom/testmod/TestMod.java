@@ -13,7 +13,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,7 +43,6 @@ public class TestMod {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
 
-        modEventBus.addListener(this::onGatherData);
 
     }
 
@@ -76,10 +74,4 @@ public class TestMod {
         ctx.registerConfig(ModConfig.Type.COMMON, TestModConfig.commonSpec, configFolder + "common-config.toml");
     }
 
-    // Data Generation
-
-    private void onGatherData(final GatherDataEvent e)
-    {
-
-    }
 }
