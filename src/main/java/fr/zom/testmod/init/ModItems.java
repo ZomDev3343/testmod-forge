@@ -3,6 +3,7 @@ package fr.zom.testmod.init;
 import fr.zom.testmod.TestMod;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,5 +34,10 @@ public class ModItems {
     public static final RegistryObject<Item> BLACK_SHOVEL = ITEMS.register("black_shovel", () -> new ShovelItem(ModTiers.BLACK_TIER, 2, -2.4f, new Item.Properties().tab(TestMod.MOD_TAB)));
     public static final RegistryObject<Item> BLACK_AXE = ITEMS.register("black_axe", () -> new AxeItem(ModTiers.BLACK_TIER, 4, -2.8f, new Item.Properties().tab(TestMod.MOD_TAB)));
     public static final RegistryObject<Item> BLACK_HOE = ITEMS.register("black_hoe", () -> new HoeItem(ModTiers.BLACK_TIER, 1, -2.1f, new Item.Properties().tab(TestMod.MOD_TAB)));
+
+    public static final RegistryObject<Item> BLACK_HELMET = ITEMS.register("black_helmet", () -> new ArmorItem(ModArmorMaterial.BLACK_ARMOR, EquipmentSlot.HEAD, new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_CHESTPLATE = ITEMS.register("black_chestplate", () -> new ArmorItem(ModArmorMaterial.BLACK_ARMOR, EquipmentSlot.CHEST, new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_LEGGINGS = ITEMS.register("black_leggings", () -> new ArmorItem(ModArmorMaterial.BLACK_ARMOR, EquipmentSlot.LEGS, new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_BOOTS = ITEMS.register("black_boots", () -> new ArmorItem(ModArmorMaterial.BLACK_ARMOR, EquipmentSlot.FEET, new Item.Properties()));
 
 }
